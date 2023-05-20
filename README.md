@@ -23,5 +23,5 @@ Cite an Aristotle setence in Book A for accuracy and consistency
 
 I don't know.
 
-#Considerations for Future Work
+# Considerations for Future Work
 Get citations to work

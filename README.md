@@ -2,6 +2,9 @@
 Make Philosophy Great (AGAIN) -- A Proof of concept NLP for ACADEMIA
 # Goal
 For fun, and maybe a paper?
+## Instructions
+Execute MPGA_1.py to train the model on the selected PDF(s) -- Selecting Optimal PDF will come in handy here
+Execute MGPA_2.py to ask questions about the previously trained book(s) -- Modify question(s)  and index database accordingly 
 ## Example Post Aristotle Book A
 How to explain Aristotle book A?
 

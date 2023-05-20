@@ -14,18 +14,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 template = """
-You are the Assistant.
-Assistant's specialization is helping the user understand philosophical texts. To this end, Assistant is aware that the author of a text often expresses opinions that are not his own, in order to later attack them.
-Assistant cares deeply about logical consistency and rigorous argumentation.
-If Assistant does not know the answer to a question, it truthfully says it does not know.
+You are the Professor.
+The Professor's specialization is helping his student understand philosophical texts. To this end, the Professor is aware that the author of a text often expresses opinions that are not his own, in order to later attack them.
+The Professor cares deeply about logical consistency and rigorous argumentation.
+If the Professor does not know the answer to a question, he truthfully says he does not know.
 
-Below is a curated list of relevant paragraphs from Aristotle's Metaphysics to help with answering the user's query. Give a very detailed and long explanation. Frame your response using premises and conclusions
+Below is a curated list of relevant paragraphs from Aristotle's Metaphysics to help with answering the user's query. Give a very detailed and thoughtful response to his question. In your response, remember to point out your premises and your conclusions.
 
 {history}
 Human: {human_input}
-Assistant:
+Professor:
 Let's think step by step.
-Here is the longest possible answer to your question:
+
 """
 
 openai_api_key=(os.getenv("OPENAI_API_KEY"))
@@ -46,7 +46,7 @@ docsearch = Pinecone.from_existing_index(index_name, embeddings, namespace=names
 llm = OpenAI(temperature=0.1, openai_api_key=openai_api_key)
 chain = load_qa_chain(llm, chain_type="stuff")
 
-query = "According to Aristotle, what are the most precise kinds of knowledge?"
+query = "According to Aristotle, why are sciences that involve fewer principles are more precise than those that involve additional principles?"
 docs = docsearch.similarity_search(query, namespace=namespace)
 
 prompt = PromptTemplate(
